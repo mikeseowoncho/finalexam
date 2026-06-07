@@ -8,7 +8,10 @@
   </head>
   <body>
     <div class="desktop">
-      <div class="icon" ondblclick="openWindow('blog-window')">
+      <div
+        class="icon"
+        ondblclick="window.open('https://mikeseowoncho.blogspot.com', '_blank')"
+      >
         <div class="icon-img">🌐</div>
         <div class="icon-text">블로그.url</div>
       </div>
@@ -59,39 +62,5 @@
         <div class="icon-text">포트폴리오5.exe</div>
       </div>
     </div>
-
-    <div class="window" id="blog-window">
-      <div class="title-bar">
-        <span class="title-text">Internet Explorer - 블로그</span>
-        <div class="close-btn" onclick="closeWindow('blog-window')">X</div>
-      </div>
-      <div class="window-content" style="text-align: center; padding: 20px">
-        <p style="margin: 0 0 15px 0; color: #333; font-size: 14px">
-          서원님의 개인 블로그로 이동하시겠습니까?
-        </p>
-        <button
-          style="
-            padding: 8px 20px;
-            cursor: pointer;
-            font-weight: bold;
-            background-color: #f0f0f0;
-            border: 1px solid #adc2ec;
-            border-radius: 3px;
-          "
-          onclick="location.href = 'blog/index.html'"
-        >
-          블로그 열기
-        </button>
-      </div>
-    </div>
-
-    <script>
-      function openWindow(id) {
-        document.getElementById(id).style.display = "block";
-      }
-      function closeWindow(id) {
-        document.getElementById(id).style.display = "none";
-      }
-    </script>
   </body>
 </html>
