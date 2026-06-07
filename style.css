@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tahoma", sans-serif;
+  user-select: none;
+}
+
+/* 윈도우 XP 상징: 초원 배경화면 */
+body {
+  /* 1. 선명도를 유지하기 위해 고화질 4K 해상도 순정 이미지로 변경 */
+  background-image: url("https://images.hdqwalls.com/download/windows-xp-bliss-4k-lu-1920x1080.jpg");
+
+  /* 2. 이미지 확대 시 픽셀이 뭉개지는 현상 방지 (크롬/사파리 최적화) */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  /* 3. 화면 비율 유지 속성 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+/* --- [1. 바탕화면 아이콘 영역 (수정됨)] --- */
+.desktop {
+  flex: 1;
+  padding: 20px;
+
+  /* ⭐️ Flex 대신 Grid 레이아웃 사용 */
+  display: grid;
+
+  /* ⭐️ 세로로 무조건 5줄까지만 허용 */
+  grid-template-rows: repeat(5, max-content);
+
+  /* ⭐️ 5개가 다 차면 오른쪽(새로운 열)으로 자동 넘기기 */
+  grid-auto-flow: column;
+
+  /* 세로 간격은 20px, 가로 간격은 30px */
+  gap: 20px 30px;
+
+  /* 아이콘들이 화면 좌측 상단부터 차곡차곡 쌓이도록 정렬 */
+  justify-content: start;
+  align-content: start;
+}
+
+.icon {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.icon-img {
+  font-size: 40px;
+  margin-bottom: 5px;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+.icon-text {
+  color: white;
+  font-size: 12px;
+  text-shadow: 1px 1px 2px black;
+  word-break: keep-all;
+}
+
+/* --- [2. 윈도우 창 모달 스타일] --- */
+.window {
+  display: none; /* 초기에는 숨김 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 90%;
+  background-color: #ece9d8;
+  border: 3px solid #0055e5;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* 윈도우 창 상단 파란색 타이틀바 */
+.title-bar {
+  background: linear-gradient(
+    to bottom,
+    #0058e6 0%,
+    #3a93ff 5%,
+    #288eff 10%,
+    #127dff 40%,
+    #036cd5 100%
+  );
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.title-text {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* 닫기(X) 버튼 */
+.close-btn {
+  background: linear-gradient(to bottom, #e37059 0%, #e04326 40%, #c42911 100%);
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 1px 1px 2px #ff9e88;
+}
+.close-btn:hover {
+  background: #ff5030;
+}
+
+/* 윈도우 창 내부 콘텐츠 영역 */
+.window-content {
+  padding: 20px;
+  height: 400px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #7a7a7a;
+  margin: 5px;
+  line-height: 1.6;
+}
+
+.window-content h2 {
+  color: #0055e5;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ece9d8;
+  padding-bottom: 5px;
+}
+.window-content h3 {
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.window-content ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+/* --- [3. 하단 작업표시줄] --- */
+.taskbar {
+  background: linear-gradient(
+    to bottom,
+    #245edb 0%,
+    #3f8cf3 9%,
+    #245edb 18%,
+    #245edb 92%,
+    #333 100%
+  );
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+}
+
+/* 시작 버튼 */
+.start-btn {
+  background: linear-gradient(
+    to bottom,
+    #309b46 0%,
+    #3ebd52 9%,
+    #309b46 18%,
+    #309b46 92%,
+    #185c27 100%
+  );
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.start-btn:hover {
+  filter: brightness(1.1);
+}
+.time {
+  color: white;
+  font-size: 12px;
+}

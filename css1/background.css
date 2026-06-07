@@ -1,0 +1,52 @@
+#container {
+  background-color: aquamarine;
+  background-image: url(giphy.gif);
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background: blue;
+  background: linear-gradient(to right bottom, blue, white);
+}
+
+.disc {
+  border: 3px dotted black;
+  margin: 10px;
+  padding: 10px;
+  width: 400px;
+  height: 200px;
+}
+
+#clip-border {
+  background-color: blueviolet;
+  background-clip: border-box;
+  background-image: url(beach.avif);
+  background: repeating-linear-gradient(
+    yellow,
+    yellow,
+    20px,
+    red 20px,
+    red 30px
+  );
+}
+#clip-padding {
+  background-color: brown;
+  background-clip: padding-box;
+  background: linear-gradient(circle at 20% 20%, red, yellow, green, blue);
+}
+#clip-content {
+  background-color: cadetblue;
+  background-clip: content-box;
+  background: linear-gradient(to bottom, red, blue);
+}
+
+.ul {
+  list-style-type: none;
+  margin-left: 30px;
+}
+
+.li {
+  background-image: url(bookicon.webp);
+  background-repeat: no-repeat;
+  background-position: left center;
+}

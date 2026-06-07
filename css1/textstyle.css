@@ -1,0 +1,28 @@
+.font {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 200%;
+  font-style: oblique;
+  font-weight: 900;
+  color: hsla(313, 85%, 38%, 0.715);
+  text-align center;
+  line-height: 1;
+  text-decoration: none;
+text-shadow: 5px -5px 3px blue;
+text-transform: capitalize;
+letter-spacing: 0.2rem;
+word-spacing: 1rem;
+}
+.ul{
+list-style-type: decimal-leading-zero;
+
+}
+#example1{
+    caption-side: bottom;
+    border-collapse: separate;
+border-style:dashed;
+border: 1px solid blue;
+}
+td,th{
+    border: 1px dotted red;
+    border-collapse: collapse;
+}

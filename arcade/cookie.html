@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Clicker - Web Arcade</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="cookie.css" />
+  </head>
+  <body>
+    <button class="back-btn" onclick="location.href = 'index.html'">
+      < BACK
+    </button>
+
+    <div class="game-area">
+      <div class="score-board">
+        <h1 id="score-display">0</h1>
+        <div class="cps-display">
+          CPS(초당 생산): <span id="cps-display">0</span>
+        </div>
+      </div>
+
+      <div class="cookie-container" id="cookie">🍪</div>
+    </div>
+
+    <div class="shop-area">
+      <h2 class="shop-title">UPGRADE</h2>
+
+      <div class="upgrade-item" id="btn-cursor" onclick="buyItem('cursor')">
+        <div class="item-name">Cursor (+1 CPS)</div>
+        <div class="item-info">
+          <span class="item-cost">Cost: <span id="cost-cursor">15</span></span>
+          <span class="item-count">Lv. <span id="count-cursor">0</span></span>
+        </div>
+      </div>
+
+      <div class="upgrade-item" id="btn-grandma" onclick="buyItem('grandma')">
+        <div class="item-name">Grandma (+5 CPS)</div>
+        <div class="item-info">
+          <span class="item-cost"
+            >Cost: <span id="cost-grandma">100</span></span
+          >
+          <span class="item-count">Lv. <span id="count-grandma">0</span></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="cookie.js"></script>
+  </body>
+</html>

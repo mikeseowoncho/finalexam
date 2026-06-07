@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .inner {
+        color: red;
+        font-weight: bolder;
+      }
+      #bgb {
+        background-color: rgb(102, 102, 228);
+      }
+      #container {
+        width: 500px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 2px dashed #e647479a;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="first">
+      <p id="bgb">"Hello, World!"</p>
+    </div>
+    <p style="color: blue; font-size: larger">CSS 테스트 1- 인라인 스타일</p>
+    <p class="inner">CSS 테스트 2- 내부 스타일시트</p>
+    <p class="outer" id="outer1" style="color: chartreuse">
+      CSS 테스트 3- 외부 스타일시트
+    </p>
+    <h1 class="inner">제목</h1>
+    <div id="container">
+      <p id="bgb">
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+        cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptas, cumque.
+      </p>
+    </div>
+    <div class="first">
+        <p>1st</p>
+        <div class="second">
+            <p>2nd</p>
+            <div class="third">
+                <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+        cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptas, cumque.</p>
+            </div>
+    </div>
+  </body>
+</html>

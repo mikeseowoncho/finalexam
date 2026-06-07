@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>로그인</h1>
+    <form action="">
+      <fieldset>
+        <legend>로그인</legend>
+        <label for="user-id">아이디(6자이상)</label>
+        <input
+          type="text"
+          id="user-id"
+          size="10"
+          value="kdhong"
+          maxlength="20"
+        />
+        <br />
+        <label for="user-pass">패스워드</label>
+        <input type="password" id="user-pass" size="10" />
+        <br />
+        <input type="submit" value="로그인" />
+      </fieldset>
+      <fieldset>
+        <legend>배송정보</legend>
+        Search :<input type="search" name="" id="" /><br />
+        URL: <input type="url" name="" id="" /><br />
+        Email: <input type="email" name="" id="" /><br />
+        TEL: <input type="tel" name="" id="" /><br />
+      </fieldset>
+    </form>
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+    <h1>radio button</h1>
+    <p>Choose your favorite Web language:</p>
+
+    <form>
+      <input type="radio" id="html" name="fav_language1" value="HTML" />
+      <label for="html" checked>HTML</label><br />
+
+      <input type="radio" id="css" name="fav_language1" value="CSS" />
+      <label for="css">CSS</label><br />
+
+      <input type="radio" id="python" name="fav_language2" value="Python" />
+      <label for="python">Python</label><br />
+
+      <input type="radio" id="c" name="fav_language2" value="C" />
+      <label for="c">C</label><br />
+      <input
+        type="radio"
+        id="javascript"
+        name="fav_language2"
+        value="JavaScript"
+      />
+      <label for="javascript">JavaScript</label>
+    </form>
+    <h1>checkbox</h1>
+
+    <form>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+      <label for="vehicle1"> I have a bike</label><br />
+
+      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+      <label for="vehicle2"> I have a car</label><br />
+
+      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+      <label for="vehicle3"> I have a boat</label>
+    </form>
+    <input type="button" onclick="alert('Hello World!')" value="Click Me!" />
+    <button onclick="alert('Hello World!')">Click Me!</button>
+    <form>
+      <label for="favcolor">Select your favorite color:</label>
+      <input type="color" id="favcolor" name="favcolor" />
+      <br />
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday" />
+      <br />
+        <label for="bdaymonth">Birthday (month and year):</label>
+  <input type="month" id="bdaymonth" name="bdaymonth">
+   `   <br />
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email" name="email" />
+      <br />
+      <label for="myfile">Select a file:</label>
+  <input type="file" id="myfile" name="myfile">
+  <br>
+  <input type="hidden" id="cust">
+    <label for="quantity">Quantity (between 1 and 5):</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="5"disabled>
+  <input type="submit" value="Submit">
+    </br>
+   <label for="vol">Volume (between 0 and 50):</label>
+  <input type="range" id="vol" name="vol" min="0" max="50">
+    </br>
+    <label for="appt">Select a time:</label>
+  <input type="time" id="appt" name="appt">
+  <label for="w3review">Review of W3Schools:</label>
+
+<textarea id="w3review" name="w3review" rows="4" cols="50">
+  At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+  </textarea>
+  <h1>select</h1>
+  <form action="/action_page.php">
+  <label for="cars">Choose a car:</label>
+  <select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+    </form>
+  </body>
+</html>

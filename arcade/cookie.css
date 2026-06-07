@@ -1,0 +1,155 @@
+/* 기본 초기화 및 테마 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none; /* 클릭 시 텍스트 드래그 방지 */
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* 둥둥 뜨는 텍스트로 인한 스크롤 방지 */
+}
+
+/* 상단 뒤로가기 버튼 */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  color: #ffea00;
+  border: 2px solid #ffea00;
+  padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #ffea00;
+  color: #000;
+}
+
+/* 왼쪽: 게임 메인 영역 */
+.game-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 4px dashed #333;
+}
+
+.score-board {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.score-board h1 {
+  color: #00ff00;
+  font-size: 40px;
+  text-shadow: 0 0 10px #00ff00;
+  margin-bottom: 10px;
+}
+
+.cps-display {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* 쿠키 디자인 및 쫀득한 클릭 애니메이션 */
+.cookie-container {
+  font-size: 150px; /* 이모지를 이미지 대신 사용 */
+  cursor: pointer;
+  transition: transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.5));
+}
+
+/* 누르는 순간 작아지는 효과 (핵심) */
+.cookie-container:active {
+  transform: scale(0.85);
+  filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.8));
+}
+
+/* 클릭 시 마우스 위치에서 둥둥 뜨는 텍스트 애니메이션 */
+.floating-text {
+  position: absolute;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 2px 2px 0px #000;
+  pointer-events: none; /* 클릭 방해 금지 */
+  animation: floatUp 0.8s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px) scale(1.5);
+  }
+}
+
+/* 오른쪽: 업그레이드 상점 영역 */
+.shop-area {
+  width: 350px;
+  background-color: #222;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.shop-title {
+  color: #ffea00;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #555;
+  font-size: 18px;
+}
+
+.upgrade-item {
+  background-color: #333;
+  border: 2px solid #555;
+  padding: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.upgrade-item:hover {
+  border-color: #00ff00;
+  background-color: #444;
+}
+
+/* 구매할 돈이 부족할 때의 스타일 */
+.upgrade-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #555;
+}
+
+.item-name {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.item-cost {
+  color: #ff9d00;
+}
+.item-count {
+  color: #00ff00;
+}

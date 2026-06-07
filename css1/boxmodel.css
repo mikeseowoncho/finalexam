@@ -1,0 +1,18 @@
+.box1 {
+  background-color: aquamarine;
+  width: 50%;
+  height: 300px;
+  border: 3px solid red;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid dashed;
+  box-sizing: border-box;
+  box-shadow: 10px 2px 0.5 yellow;
+  border-radius: 20px 10px 5px 10px;
+}
+.lorem {
+  background-color: blueviolet;
+}
+h1 {
+  color: red !important;
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Matching - Web Arcade</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="card.css" />
+  </head>
+  <body>
+    <button class="back-btn" onclick="location.href = 'index.html'">
+      < BACK
+    </button>
+
+    <div class="game-container">
+      <div class="status-bar">
+        <div class="status-item">TIME: <span id="timer">60</span>s</div>
+        <div class="status-item">FLIPS: <span id="flip-count">0</span></div>
+      </div>
+
+      <div class="game-board" id="game-board"></div>
+    </div>
+
+    <script src="card.js"></script>
+  </body>
+</html>

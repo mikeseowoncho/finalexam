@@ -1,0 +1,57 @@
+section p {
+  color: blue;
+}
+
+section > p {
+  color: blue;
+}
+
+h1 + p {
+  background-color: yellow;
+}
+
+h1 ~ p {
+  font-size: 30px;
+}
+
+a[href] {
+  background-color: yellow;
+  border: 1px solid grey;
+}
+
+a[href="https://www.naver.com"] {
+  background-color: blueviolet;
+  border: 1px solid grey;
+}
+
+a[target="_blank"] {
+  font-size: 30px;
+}
+
+[class~="button"] {
+  border-radius: 5px;
+  background-color: aquamarine;
+  font-size: 35px;
+}
+
+a[href*="w3"] {
+  background-color: lightblue;
+}
+
+a[href*="www"] {
+  font-weight: bold;
+}
+
+a[href="https://www.joongbu.ac.kr"]:hover {
+  color: blue;
+  background-color: aqua;
+}
+
+li.new::first-line {
+  content: " New";
+  font-size: x-small;
+  padding: 2px, 4px;
+  marging: 0px, 10px;
+  background-color: red;
+  color: white;
+}

@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.outer {
+  color: rgb(237, 11, 237) !important;
+  font-size: x-large;
+  font-weight: 700;
+  font-style: normal;
+}
+#outer1 {
+  font-style: italic;
+  color: brown;
+}
+body {
+  background-color: aqua;
+}
+/*.first {
+  background-color: cadetblue;
+  padding: 10px;
+}*/
+
+p {
+  font-style: italic;
+  color: black;
+}
+
+h1,
+p {
+  text-align: center;
+}
+.first {
+  color: yellow;
+  background-color: chartreuse;
+  font-size: larger;
+}
+
+.second {
+  background-color: brown;
+}
+.third {
+  background-color: antiquewhite;
+}

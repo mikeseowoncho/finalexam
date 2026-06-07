@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden; /* 스크롤 방지 */
+}
+
+/* 상단 뒤로가기 버튼 */
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: transparent;
+  color: #ffea00;
+  border: 2px solid #ffea00;
+  padding: 8px 12px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.back-btn:hover {
+  background-color: #ffea00;
+  color: #000;
+}
+
+/* 노트북 화면에 쏙 들어가도록 게임 컨테이너 압축 */
+.game-container {
+  background-color: #000;
+  border: 5px solid #333;
+  border-radius: 15px;
+  padding: 15px; /* 내부 여백 축소 */
+  width: 380px; /* 기존 450px -> 380px로 축소 (카드 가로 크기 감소) */
+  max-height: 85vh;
+  max-width: 95%;
+  box-shadow:
+    inset 0 0 15px #00ff00,
+    0 0 20px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 상단 스코어보드 여백 축소 */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.status-item span {
+  color: #fff;
+}
+
+/* 카드 게임판 여백 축소 */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px; /* 카드 사이 간격을 10px -> 8px로 축소 */
+  width: 100%;
+  perspective: 800px;
+}
+
+/* 카드 크기 조절 */
+.card {
+  /* 기존 3/4보다 세로 길이를 약간 줄여서 아담한 사이즈로 변경 */
+  aspect-ratio: 1 / 1.2;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 2px solid #555;
+}
+
+/* 카드 텍스트/이모지 크기 축소 */
+.card-back {
+  background-color: #222;
+  color: #ffea00;
+  font-size: 16px; /* 20px -> 16px로 축소 */
+  text-shadow: 0 0 5px #ffea00;
+}
+
+.card-front {
+  background-color: #333;
+  font-size: 26px; /* 32px -> 26px로 축소 */
+  transform: rotateY(180deg);
+  border-color: #00ff00;
+}
+
+.card.matched {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.5;
+}
