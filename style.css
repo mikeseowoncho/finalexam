@@ -1,17 +1,4 @@
-/* 📌 정통 윈도우 XP 스타일 확인창 (Confirm Dialog) 디자인 */
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  /* 📌 윈도우 XP 고화질 초원 배경화면 링크 적용 */
-  background-image: url("https://upload.wikimedia.org/wikipedia/en/2/21/Bliss_%28Windows_XP%29.png");
-  background-size: cover; /* 화면 크기에 꽉 차게 조절 */
-  background-position: center; /* 이미지 중앙 정렬 */
-  background-repeat: no-repeat; /* 바둑판 배열 방지 */
-  overflow: hidden; /* 스크롤바 숨기기 (진짜 바탕화면처럼) */
-  font-family: "Tahoma", "맑은 고딕", sans-serif;
-}
-
+/* 2. 증발했던 윈도우 XP 확인창(팝업) 디자인 복구! */
 .confirm-overlay {
   display: none;
   position: fixed;
@@ -19,7 +6,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: 10000;
 }
 
@@ -38,7 +25,6 @@ body {
   user-select: none;
 }
 
-/* XP 특유의 파란색 그라데이션 타이틀 바 */
 .xp-dialog .title-bar {
   background: linear-gradient(
     to bottom,
@@ -55,7 +41,6 @@ body {
   color: white;
   font-weight: bold;
   font-size: 12px;
-  letter-spacing: 0.5px;
 }
 
 .xp-dialog .close-btn {
@@ -78,10 +63,8 @@ body {
   justify-content: center;
   font-size: 11px;
   cursor: pointer;
-  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4);
 }
 
-/* 다이얼로그 본문 내 텍스트와 아이콘 배치 */
 .xp-dialog .content {
   padding: 25px 20px;
   font-size: 13px;
@@ -96,7 +79,6 @@ body {
   font-size: 32px;
 }
 
-/* 하단 버튼 영역 */
 .xp-dialog .buttons {
   padding: 10px;
   text-align: center;
@@ -106,7 +88,6 @@ body {
   gap: 10px;
 }
 
-/* XP 스타일 버튼 (기본 상태 및 호버 효과) */
 .xp-dialog button {
   padding: 4px 18px;
   font-size: 12px;
@@ -125,7 +106,6 @@ body {
   box-shadow: inset 1px 1px 0px #fff;
 }
 
-/* 마우스 올렸을 때 XP 특유의 주황빛 도는 노란색 테두리 호버 */
 .xp-dialog button:hover {
   background: linear-gradient(
     to bottom,
@@ -135,8 +115,4 @@ body {
     #fbe69f 100%
   );
   border-color: #e5a515;
-}
-
-.xp-dialog button:active {
-  background: linear-gradient(to bottom, #e5a515 0%, #f9bd32 100%);
 }
