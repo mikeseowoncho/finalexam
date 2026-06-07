@@ -5,6 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seowon's Portfolio - Windows XP</title>
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* 1. 윈도우 XP 초원 배경화면 */
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        /* 가장 안정적인 위키미디어 공식 이미지 링크 */
+        background-image: url("https://upload.wikimedia.org/wikipedia/en/2/21/Bliss_%28Windows_XP%29.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+      }
+
+      /* 2. 윈도우 XP 확인창(팝업) 디자인 */
+      .confirm-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 10000;
+      }
+
+      .xp-dialog {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 340px;
+        background-color: #ece9d8;
+        border: 3px solid #0054e3;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+        font-family: "Tahoma", "맑은 고딕", sans-serif;
+        user-select: none;
+      }
+
+      .xp-dialog .title-bar {
+        background: linear-gradient(
+          to bottom,
+          #0058e6 0%,
+          #0076f6 12%,
+          #0058e6 30%,
+          #003dd6 70%,
+          #135fe6 100%
+        );
+        padding: 5px 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .xp-dialog .close-btn {
+        background: linear-gradient(
+          to bottom,
+          #e7604a 0%,
+          #e63214 20%,
+          #cc1e02 60%,
+          #b21400 80%,
+          #e7604a 100%
+        );
+        border: 1px solid #7c1200;
+        border-radius: 3px;
+        color: white;
+        font-weight: bold;
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        cursor: pointer;
+      }
+
+      .xp-dialog .content {
+        padding: 25px 20px;
+        font-size: 13px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background-color: #ece9d8;
+      }
+
+      .xp-dialog .icon-msg {
+        font-size: 32px;
+      }
+
+      .xp-dialog .buttons {
+        padding: 10px;
+        text-align: center;
+        background-color: #ece9d8;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .xp-dialog button {
+        padding: 4px 18px;
+        font-size: 12px;
+        color: #000;
+        background: linear-gradient(
+          to bottom,
+          #ffffff 0%,
+          #eaeaea 30%,
+          #dfdfdf 60%,
+          #ececec 100%
+        );
+        border: 1px solid #003c74;
+        border-radius: 3px;
+        cursor: pointer;
+        min-width: 75px;
+        box-shadow: inset 1px 1px 0px #fff;
+      }
+
+      .xp-dialog button:hover {
+        background: linear-gradient(
+          to bottom,
+          #fbe69f 0%,
+          #fbd567 40%,
+          #f9bd32 70%,
+          #fbe69f 100%
+        );
+        border-color: #e5a515;
+      }
+    </style>
   </head>
   <body>
     <div class="desktop">
