@@ -1,4 +1,17 @@
-/* 2. 증발했던 윈도우 XP 확인창(팝업) 디자인 복구! */
+/* 1. 윈도우 XP 초원 배경화면 */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* 가장 안정적인 위키미디어 공식 이미지 링크 */
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/2/21/Bliss_%28Windows_XP%29.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* 2. 윈도우 XP 확인창(팝업) 디자인 */
 .confirm-overlay {
   display: none;
   position: fixed;
