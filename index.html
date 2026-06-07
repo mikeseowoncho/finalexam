@@ -11,7 +11,7 @@
       <div
         class="icon"
         ondblclick="
-          window.open('https://informationsecurityff.blogspot.com', '_blank')
+          requestNav('https://informationsecurityff.blogspot.com', '_blank')
         "
       >
         <div class="icon-img">🌐</div>
@@ -21,7 +21,7 @@
       <div
         class="icon"
         ondblclick="
-          window.open(
+          requestNav(
             'https://1drv.ms/p/c/04ae8d99431d5665/IQAKjosbDAiXS7u9Qr79YgRbAaLYT5s534R3_cnMa4WId3Q?e=Lzrmjm',
             '_blank',
           )
@@ -31,38 +31,87 @@
         <div class="icon-text">팀_프로젝트_발표.pptx</div>
       </div>
 
-      <div class="icon" ondblclick="location.href = 'arcade/index.html'">
+      <div class="icon" ondblclick="requestNav('arcade/index.html', 'href')">
         <div class="icon-img">🎮</div>
         <div class="icon-text">미니게임_천국.exe</div>
       </div>
 
-      <div class="icon" ondblclick="location.href = 'css1/index.html'">
+      <div class="icon" ondblclick="requestNav('css1/index.html', 'href')">
         <div class="icon-img">📙</div>
         <div class="icon-text">포트폴리오1.exe</div>
       </div>
 
-      <div class="icon" ondblclick="location.href = 'groupproject/index.html'">
+      <div
+        class="icon"
+        ondblclick="requestNav('groupproject/index.html', 'href')"
+      >
         <div class="icon-img">📕</div>
         <div class="icon-text">포트폴리오2.exe</div>
       </div>
 
-      <div class="icon" ondblclick="location.href = 'ad/index.html'">
+      <div class="icon" ondblclick="requestNav('ad/index.html', 'href')">
         <div class="icon-img">📚</div>
         <div class="icon-text">포트폴리오3.exe</div>
       </div>
 
-      <div class="icon" ondblclick="location.href = 'hcjdemo1/index.html'">
+      <div class="icon" ondblclick="requestNav('hcjdemo1/index.html', 'href')">
         <div class="icon-img">📖</div>
         <div class="icon-text">포트폴리오4.exe</div>
       </div>
 
       <div
         class="icon"
-        ondblclick="location.href = 'personalproject/index.html'"
+        ondblclick="requestNav('personalproject/index.html', 'href')"
       >
         <div class="icon-img">🎒</div>
         <div class="icon-text">포트폴리오5.exe</div>
       </div>
     </div>
+
+    <div id="xp-confirm-overlay" class="confirm-overlay">
+      <div class="xp-dialog">
+        <div class="title-bar">
+          <span>확인</span>
+          <div class="close-btn" onclick="handleConfirm(false)">X</div>
+        </div>
+        <div class="content">
+          <span class="icon-msg">❓</span>
+          <div>윈도우 XP 창으로 이동하시겠습니까?</div>
+        </div>
+        <div class="buttons">
+          <button onclick="handleConfirm(true)">확인</button>
+          <button onclick="handleConfirm(false)">취소</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 네비게이션 제어 상태 변수
+      let pendingURL = "";
+      let pendingType = "";
+
+      // 아이콘 더블클릭 시 확인창을 띄우는 함수
+      function requestNav(url, type) {
+        pendingURL = url;
+        pendingType = type;
+        document.getElementById("xp-confirm-overlay").style.display = "block";
+      }
+
+      // 확인창 버튼 클릭 처리 함수
+      function handleConfirm(confirmed) {
+        document.getElementById("xp-confirm-overlay").style.display = "none";
+
+        if (confirmed && pendingURL) {
+          if (pendingType === "_blank") {
+            window.open(pendingURL, "_blank");
+          } else {
+            location.href = pendingURL;
+          }
+        }
+        // 상태 초기화
+        pendingURL = "";
+        pendingType = "";
+      }
+    </script>
   </body>
 </html>
