@@ -5,6 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seowon's Portfolio - Windows XP</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* 전체 화면 Presentation 뷰어 스타일 */
+      .ppt-fullscreen-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+        z-index: 9999; /* 최상단에 배치 */
+      }
+
+      .ppt-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .ppt-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* PPT 종료 버튼 (오른쪽 상단에 깔끔하게 배치) */
+      .close-ppt-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background-color: rgba(255, 0, 0, 0.8);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 10000;
+        font-family: "맑은 고딕", sans-serif;
+        transition: background-color 0.2s;
+      }
+
+      .close-ppt-btn:hover {
+        background-color: rgba(200, 0, 0, 1);
+      }
+    </style>
   </head>
   <body>
     <div class="desktop">
@@ -13,7 +60,7 @@
         <div class="icon-text">블로그.url</div>
       </div>
 
-      <div class="icon" ondblclick="openWindow('team-window')">
+      <div class="icon" ondblclick="openPPT()">
         <div class="icon-img">📊</div>
         <div class="icon-text">팀_프로젝트_발표.pptx</div>
       </div>
@@ -52,6 +99,18 @@
       </div>
     </div>
 
+    <div id="ppt-overlay" class="ppt-fullscreen-overlay">
+      <div class="ppt-container">
+        <button class="close-ppt-btn" onclick="closePPT()">
+          ❌ 발표 종료 (ESC)
+        </button>
+        <iframe
+          src="https://onedrive.live.com/embed?cid=04AE8D99431D5665&resid=4AE8D99431D5665%21144218&authkey=%21AIgKjosbDAiXS7u&em=2&wdAr=1.7777777777777777"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
     <div class="window" id="blog-window">
       <div class="title-bar">
         <span class="title-text">Internet Explorer - 블로그</span>
@@ -77,21 +136,32 @@
       </div>
     </div>
 
-    <div class="window" id="team-window">
-      <div class="title-bar">
-        <span class="title-text">PowerPoint - 팀 프로젝트 기말 발표</span>
-        <div class="close-btn" onclick="closeWindow('team-window')">X</div>
-      </div>
-      <div class="window-content"></div>
-    </div>
-
     <script>
+      // 기존 윈도우 제어 함수
       function openWindow(id) {
         document.getElementById(id).style.display = "block";
       }
       function closeWindow(id) {
         document.getElementById(id).style.display = "none";
       }
+
+      // 📌 PPT 뷰어 제어 함수
+      function openPPT() {
+        document.getElementById("ppt-overlay").style.display = "block";
+        document.body.style.overflow = "hidden"; /* 뒷배경 스크롤 방지 */
+      }
+
+      function closePPT() {
+        document.getElementById("ppt-overlay").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // 키보드 ESC 키를 누르면 발표가 종료되도록 편의 기능 추가
+      window.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closePPT();
+        }
+      });
     </script>
   </body>
 </html>
